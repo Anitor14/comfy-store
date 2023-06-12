@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import Provider from "../components/Provider";
 import { ProductsProvider } from "../context/products_context";
+import { FilterProvider } from "../context/filter_context";
 import Footer from "../components/Footer";
 
 export const metadata = {
@@ -16,12 +17,14 @@ const RootLayout = ({ children }) => {
       <body>
         <Provider>
           <ProductsProvider>
-            <main className="w-full overflow-hidden bg-white">
-              <Navbar />
-              <Sidebar />
-              {children}
-              <Footer />
-            </main>
+            <FilterProvider>
+              <main className="w-full overflow-hidden bg-white">
+                <Navbar />
+                <Sidebar />
+                {children}
+                <Footer />
+              </main>
+            </FilterProvider>
           </ProductsProvider>
         </Provider>
       </body>
