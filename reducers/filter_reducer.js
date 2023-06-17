@@ -87,7 +87,36 @@ const filter_reducer = (state, action) => {
   if (action.type === SET_LISTVIEW) {
     return { ...state, grid_view: false };
   }
-
+  if (action.type === UPDATE_SORT) {
+    return {
+      ...state,
+      sort: action.payload,
+    };
+  }
+  if (action.type === UPDATE_FILTERS) {
+    const { name, value } = action.payload;
+    return {
+      ...state,
+      filters: {
+        ...state.filters,
+        [name]: value,
+      },
+    };
+  }
+  if (action.type === CLEAR_FILTERS) {
+    return {
+      ...state,
+      filters: {
+        ...state.filters,
+        text: "",
+        company: "all",
+        category: "all",
+        color: "all",
+        price: state.filters.max_price,
+        shipping: false,
+      },
+    };
+  }
   throw new Error(`No Matching "${action.type}" - action type`);
 };
 
