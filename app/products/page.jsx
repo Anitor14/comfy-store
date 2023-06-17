@@ -11,9 +11,9 @@ const Products = () => {
       <PageHero title="products" />
       <section className="w-full sm:px-[80px] px-6 flex justify-center items-center">
         <div className="xl:max-w-[1280px] w-full">
-          <div className="grid md:grid-cols-4 gap-y-12 gap-x-6 mx-auto my-16">
+          <div className="grid md:grid-cols-[200px,1fr] gap-y-12 gap-x-6 mx-auto my-16">
             <Filters />
-            <div className="md:col-span-3">
+            <div className="">
               <Sort />
               <ProductList />
             </div>

@@ -28,7 +28,7 @@ const FeaturedProducts = () => {
           <h2 className="font-[700]">featured products</h2>
           <div className="underline"></div>
         </div>
-        <div className="grid place-content-center  md:grid-cols-3 gap-[2.5rem] py-[3rem]  ">
+        <div className="grid place-content-center  md:grid-cols-[repeat(auto-fit,minmax(360px,1fr))] gap-[2.5rem] py-[3rem]  ">
           {featured.slice(0, 3).map((product) => {
             return <Product key={product.id} {...product} />;
           })}

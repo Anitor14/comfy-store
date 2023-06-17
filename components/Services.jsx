@@ -16,7 +16,7 @@ const Services = () => {
             dolore aut vero consequuntur.
           </p>
         </article>
-        <div className="mt-[4rem] grid sm:grid-cols-2 lg:grid-cols-3 gap-[2.5rem]">
+        <div className="mt-[4rem] grid  grid-cols-[repeat(auto-fit,minmax(360px,1fr))] gap-[2.5rem]">
           {services.map((service) => {
             const { id, icon, title, text } = service;
             return (
