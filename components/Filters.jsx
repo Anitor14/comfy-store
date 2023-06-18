@@ -27,7 +27,7 @@ const Filters = () => {
 
   return (
     <section className="">
-      <div className="sticky top-[1rem]">
+      <div className="md:sticky md:top-[1rem]">
         <form onSubmit={(e) => e.preventDefault()}>
           {/* search input */}
           <div className="mb-[1.25rem]">
