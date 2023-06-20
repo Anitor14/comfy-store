@@ -10,6 +10,7 @@ import Error from "@/components/Error";
 import AddToCart from "@/components/AddToCart";
 import Stars from "@/components/Stars";
 import PageHero from "@/components/PageHero";
+import ProductImages from "@/components/ProductImages";
 
 const SingleProductPage = ({ params }) => {
   const router = useRouter();
@@ -50,9 +51,25 @@ const SingleProductPage = ({ params }) => {
     images,
   } = product;
 
+  console.log(images);
+
   return (
     <main>
       <PageHero title={name} product />
+      <section className="w-full sm:px-[80px] px-6 flex justify-center items-center">
+        <div className="xl:max-w-[1280px] w-full min-h-[calc(80vh-10rem)]">
+          <Link href="/products" className="btn mt-5">
+            back to products
+          </Link>
+          <div className="grid gap-[4rem] mt-[2rem] md:grid-cols-[1fr,1fr] items-center">
+            <ProductImages images={images} />
+            <section>
+              <h2>{name}</h2>
+              <Stars stars={stars} reviews={reviews} />
+            </section>
+          </div>
+        </div>
+      </section>
     </main>
   );
 };

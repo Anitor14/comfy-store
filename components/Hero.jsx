@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section className="w-full sm:px-[80px] px-6 flex justify-center items-center">
       <div className="xl:max-w-[1280px] w-full">
-        <div className="min-h-[60vh] md:h-[100vh] grid md:grid-cols-2 place-content-center md:gap-[8rem]">
+        <div className="min-h-[60vh] md:h-[calc(100vh-5rem)] grid md:grid-cols-2 place-content-center md:gap-[8rem]">
           <article>
             <h1 className="md:mb-[2rem] font-[700] leading-[50px]">
               design your <br /> comfort zone
