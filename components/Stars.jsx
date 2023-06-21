@@ -18,7 +18,7 @@ const Stars = ({ stars, reviews }) => {
   });
   return (
     <div className="flex items-center mb-[0.5rem]">
-      <div className="stars">{tempStars}</div>
+      <div className="flex items-center">{tempStars}</div>
       <p className="ml-[0.5rem] mb-0">{reviews} customer reviews</p>
     </div>
   );

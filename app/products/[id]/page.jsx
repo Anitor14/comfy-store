@@ -51,8 +51,6 @@ const SingleProductPage = ({ params }) => {
     images,
   } = product;
 
-  console.log(images);
-
   return (
     <main>
       <PageHero title={name} product />
@@ -61,11 +59,29 @@ const SingleProductPage = ({ params }) => {
           <Link href="/products" className="btn mt-5">
             back to products
           </Link>
-          <div className="grid gap-[4rem] mt-[2rem] md:grid-cols-[1fr,1fr] items-center">
+          <div className="grid gap-[4rem] mt-[2rem] md:grid-cols-[1fr,1fr] items-center ">
             <ProductImages images={images} />
             <section>
-              <h2>{name}</h2>
+              <h2 className="font-700">{name}</h2>
               <Stars stars={stars} reviews={reviews} />
+              <h5 className="text-clr-primary-5 md:font-[1.25rem]">
+                {formatPrice(price)}
+              </h5>
+              <p className="leading-[2] max-w-[45em]">{description}</p>
+              <p className="capitalize w-[300px] grid grid-cols-[125px,1fr]">
+                <span className="font-[700]">Available : </span>
+                {stock > 0 ? "In stock" : "out of stock"}
+              </p>
+              <p className="capitalize w-[300px] grid grid-cols-[125px,1fr]">
+                <span className="font-[700]">SKU :</span>
+                {sku}
+              </p>
+              <p className="capitalize w-[300px] grid grid-cols-[125px,1fr]">
+                <span className="font-[700]">Brand :</span>
+                {company}
+              </p>
+              <hr />
+              {stock > 0 && <AddToCart product={product} />}
             </section>
           </div>
         </div>
