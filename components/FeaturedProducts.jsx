@@ -20,7 +20,6 @@ const FeaturedProducts = () => {
     return <Error />;
   }
 
-  console.log(featured);
   return (
     <section className="w-full sm:px-[80px] px-6 flex justify-center items-center bg-clr-grey-10">
       <div className="xl:max-w-[1280px] w-full py-[5rem]">

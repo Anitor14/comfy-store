@@ -12,9 +12,6 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
 const CartButtons = ({ show }) => {
   const { data: session } = useSession();
-
-  console.log(session);
-
   const [providers, setProviders] = useState(null);
 
   useEffect(() => {

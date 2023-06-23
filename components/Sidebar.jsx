@@ -10,7 +10,6 @@ import Image from "next/image";
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useProductsContext();
-  console.log(isSidebarOpen);
   const { data: session } = useSession();
   return (
     <aside
