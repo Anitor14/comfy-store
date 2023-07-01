@@ -26,7 +26,10 @@ const CartTotals = () => {
           </h4>
         </article>
         {session?.user ? (
-          <Link href={"/checkout"} className="btn">
+          <Link
+            href={"/checkout"}
+            className="btn w-full text-center font-[700] mt-4"
+          >
             proceed to checkout
           </Link>
         ) : (

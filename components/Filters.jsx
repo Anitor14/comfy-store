@@ -27,7 +27,7 @@ const Filters = () => {
 
   return (
     <section className="">
-      <div className="md:sticky md:top-[1rem]">
+      <div className="md:sticky md:top-4">
         <form onSubmit={(e) => e.preventDefault()}>
           {/* search input */}
           <div className="mb-[1.25rem]">
@@ -37,16 +37,15 @@ const Filters = () => {
               value={text}
               placeholder="search"
               onChange={updateFilters}
-              className="p-[0.5rem] bg-clr-grey-10 border-transparent rounded-[0.25rem] leading-[0.1rem] placeholder:capitalize"
+              className="p-2 bg-clr-grey-10 border-transparent rounded-[0.25rem] leading-[0.1rem] placeholder:capitalize"
             />
           </div>
           {/* end of search input */}
           {/* category */}
-          <div className="mb-[1.25rem]">
-            <h5 className="mb-[0.5rem] font-[700]">category</h5>
+          <div className="mb-5">
+            <h5 className="mb-2 font-[700]">category</h5>
             <div>
               {categories.map((c, index) => {
-                console.log(category === c.toLowerCase());
                 return (
                   <button
                     key={index}
@@ -54,8 +53,10 @@ const Filters = () => {
                     type="button"
                     name="category"
                     className={`${
-                      category === c.toLowerCase() ? "border-clr-grey-5 " : ""
-                    } block  my-[0.25em] mx-0 py-[0.25rem] px-0 capitalize bg-transparent border-solid border-b border-transparent  text-clr-grey-5 cursor-pointer `}
+                      category === c.toLowerCase()
+                        ? "border-clr-grey-5 "
+                        : "border-transparent"
+                    } block  my-[0.25em] mx-0 py-[0.25rem] px-0 capitalize bg-transparent border-solid border-b text-clr-grey-5 cursor-pointer `}
                   >
                     {c}
                   </button>
@@ -71,11 +72,11 @@ const Filters = () => {
               name="company"
               value={company}
               onChange={updateFilters}
-              className="bg-clr-grey-10 rounded-[0.25rem] border-transparent p-[0.25rem]"
+              className="bg-clr-grey-10 rounded-[0.25rem] border-transparent p-[0.25rem] cursor-pointer"
             >
               {companies.map((c, index) => {
                 return (
-                  <option key={index} value={c}>
+                  <option key={index} value={c} className="cursor-pointer">
                     {c}
                   </option>
                 );
@@ -98,9 +99,9 @@ const Filters = () => {
                       className={`
                       ${
                         color === "all"
-                          ? " opacity-[1] border-clr-grey-5 bg-[red]"
-                          : ""
-                      } flex items-center justify-center my-[0.25em] py-[0.25rem] px-0 mx-0 mr-[0.5rem] capitalize bg-transparent border-solid border-b border-transparent text-clr-grey-5 cursor-pointer  opacity-[0.5]`}
+                          ? " opacity-[1] border-clr-grey-5"
+                          : " border-transparent opacity-[0.5]"
+                      } flex items-center justify-center my-[0.25em] py-[0.25rem] px-0 mx-0 mr-[0.5rem] capitalize bg-transparent border-solid border-b  text-clr-grey-5 cursor-pointer `}
                     >
                       all
                     </button>
@@ -114,8 +115,8 @@ const Filters = () => {
                     onClick={updateFilters}
                     data-color={c}
                     className={`${
-                      color === c ? "opacity-[1]" : ""
-                    }  w-[1rem] h-[1rem] rounded-full bg-[#222] mr-[0.5rem] border-none cursor-pointer opacity-[0.5] flex items-center justify-center `}
+                      color === c ? "opacity-[1]" : "opacity-[0.5]"
+                    }  w-[1rem] h-[1rem] rounded-full bg-[#222] mr-[0.5rem] border-none cursor-pointer flex items-center justify-center `}
                   >
                     {color === c && (
                       <FaCheck className="text-[0.5rem] text-clr-white" />

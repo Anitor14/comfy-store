@@ -26,10 +26,10 @@ const Navbar = () => {
   //   setUpProviders();
   // }, []);
   return (
-    <section className="w-full  sm:px-[80px] px-6 flex justify-center items-center">
+    <section className="w-full  sm:px-[80px] px-6 flex justify-center items-center ">
       <div className="xl:max-w-[1280px] w-full">
         <div className="w-full flex items-center justify-between py-[10px]">
-          <div className="flex items-center justify-between max-sm:w-full ">
+          <div className="flex items-center justify-between max-md:w-full ">
             <Link href={"/"}>
               <Image
                 src="/logo.svg"
@@ -41,14 +41,14 @@ const Navbar = () => {
             </Link>
             <button
               type="button"
-              className="bg-[transparent] border-[transparent] cursor-pointer sm:hidden"
+              className="bg-[transparent] border-[transparent] cursor-pointer md:hidden"
               onClick={openSidebar}
             >
               <FaBars className="text-[2rem]" />
             </button>
           </div>
 
-          <ul className="hidden sm:flex justify-center items-center">
+          <ul className="hidden md:flex justify-center items-center">
             {links.map((link) => {
               const { id, text, url } = link;
               return (

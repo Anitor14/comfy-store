@@ -7,16 +7,17 @@ import CartItem from "@/components/CartItem";
 import CartTotals from "./CartTotals";
 const CartContent = () => {
   const { cart, clearCart } = useCartContext();
-  const [cartState, setCartState] = useState([]);
-  useEffect(() => {
-    setCartState(cart);
-  }, []);
+
+  // const [cartState, setCartState] = useState([]);
+  // useEffect(() => {
+  //   setCartState(cart);
+  // }, []);
 
   return (
     <section className="w-full sm:px-[80px] px-6 flex justify-center items-center">
       <div className="xl:max-w-[1280px] w-full py-[5rem]">
         <CartColumns />
-        {cartState.map((item) => {
+        {cart.map((item) => {
           console.log(`this is the first items ===> ${item}`);
           return <CartItem key={item.id} {...item} />;
         })}

@@ -27,7 +27,7 @@ const CartButtons = ({ show }) => {
     <div
       className={`${
         show ? "grid" : "hidden"
-      } sm:grid grid-cols-2 items-center w-[225px]`}
+      } md:grid grid-cols-2 items-center w-[225px]`}
     >
       <Link
         href={"/cart"}

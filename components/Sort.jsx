@@ -12,23 +12,25 @@ const Sort = () => {
     updateSort,
   } = useFilterContext();
 
-  console.log(`this is the grid view ${grid_view}`);
-
   return (
     <section className="grid max-sm:gap-y-[0.75rem] gap-x-[2rem] mb-[2rem] max-sm:grid-cols-[1fr] grid-cols-[auto,auto,1fr,auto] items-center">
       <div className="w-[50px] grid grid-cols-[1fr,1fr] gap-x-[0.5rem]">
         <button
           className={`${
-            grid_view ? "bg-clr-black text-[white]" : ""
-          } bg-transparent border-b border-solid border-clr-black text-clr-black w-[1.5rem] rounded-[0.25rem] h-[1.5rem] flex items-center justify-center cursor-pointer`}
+            grid_view
+              ? "bg-clr-black text-[white]"
+              : " bg-transparent text-clr-black"
+          }  border-b border-solid border-clr-black  w-[1.5rem] rounded-[0.25rem] h-[1.5rem] flex items-center justify-center cursor-pointer`}
           onClick={setGridView}
         >
           <BsFillGridFill className="text-[1rem]" />
         </button>
         <button
           className={`${
-            !grid_view ? "bg-clr-black text-clr-white" : ""
-          } bg-transparent border-b border-solid border-clr-black text-clr-black w-[1.5rem] rounded-[0.25rem] h-[1.5rem] flex items-center justify-center cursor-pointer`}
+            !grid_view
+              ? "bg-clr-black text-clr-white"
+              : "bg-transparent text-clr-black"
+          }  border-b border-solid border-clr-black  w-[1.5rem] rounded-[0.25rem] h-[1.5rem] flex items-center justify-center cursor-pointer`}
           onClick={setListView}
         >
           <BsList className="text-[1rem]" />
