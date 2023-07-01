@@ -27,7 +27,6 @@ const products_reducer = (state, action) => {
         featured_products.push(product);
       }
     });
-    console.log(featured_products);
     return {
       ...state,
       products_loading: false,

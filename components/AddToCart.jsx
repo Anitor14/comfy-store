@@ -18,7 +18,6 @@ const AddToCart = ({ product }) => {
         tempAmount = stock;
       }
       return tempAmount;
-      sss;
     });
   };
 

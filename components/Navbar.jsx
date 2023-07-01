@@ -10,20 +10,21 @@ import { useProductsContext } from "../context/products_context";
 
 const Navbar = () => {
   const { openSidebar } = useProductsContext();
+
   //gets the user session.
   const { data: session } = useSession();
 
   const [providers, setProviders] = useState(null);
 
-  useEffect(() => {
-    const setUpProviders = async () => {
-      // getting all the providers
-      const response = await getProviders();
-      // storing it in the providers state.
-      setProviders(response);
-    };
-    setUpProviders();
-  }, []);
+  // useEffect(() => {
+  //   const setUpProviders = async () => {
+  //     // getting all the providers
+  //     const response = await getProviders();
+  //     // storing it in the providers state.
+  //     setProviders(response);
+  //   };
+  //   setUpProviders();
+  // }, []);
   return (
     <section className="w-full  sm:px-[80px] px-6 flex justify-center items-center">
       <div className="xl:max-w-[1280px] w-full">

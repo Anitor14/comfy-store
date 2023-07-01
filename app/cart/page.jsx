@@ -6,8 +6,6 @@ import CartContent from "@/components/CartContent";
 import PageHero from "@/components/PageHero";
 const CartPage = () => {
   const { cart } = useCartContext();
-  console.log(localStorage.getItem("cart"));
-  // console.log(cart);
   if (cart.length < 1) {
     return (
       <main className="min-h-[calc(100vh-5rem)] py-[5rem] px-[0rem]">
