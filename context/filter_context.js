@@ -40,7 +40,7 @@ export const FilterProvider = ({ children }) => {
   useEffect(() => {
     dispatch({ type: LOAD_PRODUCTS, payload: products });
   }, [products]);
-  
+
   useEffect(() => {
     dispatch({ type: FILTER_PRODUCTS });
     dispatch({ type: SORT_PRODUCTS });
@@ -71,7 +71,6 @@ export const FilterProvider = ({ children }) => {
     if (name === "shipping") {
       value = e.target.checked;
     }
-    console.log(value);
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
   };
   const clearFilters = (e) => {

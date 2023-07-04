@@ -7,12 +7,14 @@ import {
   FaUserPlus,
 } from "react-icons/fa";
 import Link from "next/link";
-import Image from "next/image";
+
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import { useCartContext } from "@/context/cart_context";
 
 const CartButtons = ({ show }) => {
   const { data: session } = useSession();
   const [providers, setProviders] = useState(null);
+  const { total_items } = useCartContext();
 
   useEffect(() => {
     const setUpProviders = async () => {
@@ -37,7 +39,7 @@ const CartButtons = ({ show }) => {
         <span className="flex items-center relative">
           <FaShoppingCart className="h-[1.6rem] ml-[5px]" />
           <span className="absolute top-[-10px] right-[-16px] bg-clr-primary-5 w-[16px] h-[16px] flex items-center justify-center rounded-full text-[0.75rem] text-clr-white p-[12px]">
-            4
+            {total_items}
           </span>
         </span>
       </Link>
